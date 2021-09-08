@@ -22,18 +22,25 @@ namespace CipherConsole
         public void Encode() {
 
 
-            Console.Write(inputStr + "poo"+shiftKey);
+            Console.Write("Original Cipher: "+inputStr);
             Console.WriteLine("");
             char temp;
-
             var sb = new StringBuilder();
 
             for (int i = 0; i < inputStr.Length; i++) {
 
-                temp = (char)(inputStr[i] + shiftKey);
-                sb.Append(temp);
+                    temp = (char)(inputStr[i] +shiftKey );
+
+
+                    if (temp > 'z')
+                    {
+                        temp = (char)(inputStr[i] - (26- shiftKey%26));
+
+                        sb.Append(temp);
+                    }
+               
             }
-            Console.WriteLine(sb);
+            Console.WriteLine("Encoded as: "+ sb);
 
         }
 

@@ -10,8 +10,8 @@ namespace CipherConsole
     {
         static void Main(string[] args)
         {
-            string input = "hello how are you";
-            var cipher1 = new Caesar(input, 3);
+            string input = "this message is hidden";
+            var cipher1 = new Caesar(input, 10);
 
 
             cipher1.Encode();
