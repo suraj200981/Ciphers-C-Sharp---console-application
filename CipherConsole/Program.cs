@@ -15,7 +15,7 @@ namespace CipherConsole
 
 
             cipher1.Encode();
-            Console.ReadLine(); Moonpig364
+            Console.ReadLine(); 
         }
     }
 }
