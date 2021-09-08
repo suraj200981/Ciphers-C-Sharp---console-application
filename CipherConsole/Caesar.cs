@@ -13,7 +13,7 @@ namespace CipherConsole
 
          public Caesar(string str, int key )
         {
-            inputStr = str;
+            inputStr = str.ToLower();
             shiftKey = key;
         }
 
@@ -29,16 +29,28 @@ namespace CipherConsole
 
             for (int i = 0; i < inputStr.Length; i++) {
 
-                    temp = (char)(inputStr[i] +shiftKey );
+
+
+                if (inputStr[i] != ' ')
+                {
+                    temp = (char)(inputStr[i] + shiftKey); //shift the char by the key amound and this will be the new shifted value
 
 
                     if (temp > 'z')
-                    {
-                        temp = (char)(inputStr[i] - (26- shiftKey%26));
-
-                        sb.Append(temp);
+                    { // if surpasses z in alphabet in mod will wrap it round
+                        temp = (char)(inputStr[i] - (26 - shiftKey % 26));
                     }
-               
+
+                    sb.Append(temp);
+
+                }
+                else {
+                    sb.Append(" ");
+
+                }
+
+
+
             }
             Console.WriteLine("Encoded as: "+ sb);
 

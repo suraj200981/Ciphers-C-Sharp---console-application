@@ -10,7 +10,7 @@ namespace CipherConsole
     {
         static void Main(string[] args)
         {
-            string input = "this message is hidden";
+            string input = "THIS MESSAGE IS HIDDEN";
             var cipher1 = new Caesar(input, 10);
 
 
